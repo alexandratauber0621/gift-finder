@@ -233,10 +233,11 @@ For each of your 5 gift recommendations, use this exact format:
 *Why this is perfect for them:*
 [2-3 sentences connecting this gift to specific details about who they are. Reference their personality, interests, or situation directly. Make it clear this isn't a generic suggestion.]
 
-*Budget & Sourcing:*
-• Estimated cost: $XX - $XX
-• Where to look: [2-3 specific retailer suggestions]
-• Pro tip: [One helpful buying tip if applicable]
+**Budget & Sourcing:**
+
+- **Estimated cost:** $XX - $XX
+- **Where to look:** [2-3 specific retailer suggestions]
+- **Pro tip:** [One helpful buying tip if applicable]
 
 ---
 
@@ -520,4 +521,4 @@ Please analyze this person thoroughly and provide your best gift recommendations
 
 # Footer
 st.divider()
-st.caption("Built for Prof. Hindman's AI Revolution course at GWU | Powered by Claude AI")
+st.caption("Built for Professor Hindman's AI Revolution course at GWU | Powered by Claude AI")
