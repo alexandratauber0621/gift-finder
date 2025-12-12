@@ -8,147 +8,183 @@ st.set_page_config(
     layout="centered"
 )
 
-# Custom CSS for sophisticated styling
+# Custom CSS for elegant burgundy styling
 st.markdown("""
 <style>
-    /* Main background and font */
+    /* Main background - rich burgundy */
     .stApp {
-        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+        background: linear-gradient(145deg, #4a1c2a 0%, #722f37 50%, #4a1c2a 100%);
         background-attachment: fixed;
     }
     
     /* Main container styling */
     .main .block-container {
-        background: rgba(255, 255, 255, 0.95);
-        border-radius: 20px;
-        padding: 2rem 3rem;
+        background: rgba(255, 255, 255, 0.08);
+        border-radius: 24px;
+        padding: 2.5rem 3rem;
         margin-top: 2rem;
         margin-bottom: 2rem;
-        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
+    }
+    
+    /* All text white */
+    h1, h2, h3, p, span, label, .stMarkdown {
+        color: #ffffff !important;
     }
     
     /* Header styling */
     h1 {
-        color: #2d3748;
         font-weight: 700;
         text-align: center;
         margin-bottom: 0.5rem;
+        text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        font-size: 2.5rem !important;
     }
     
-    /* Subheader styling */
-    h2, h3 {
-        color: #4a5568;
+    /* Subheaders */
+    h3 {
+        color: #ffd700 !important;
         font-weight: 600;
         margin-top: 1.5rem;
+        border-bottom: 1px solid rgba(255, 215, 0, 0.3);
+        padding-bottom: 0.5rem;
     }
     
-    /* Section headers with icons */
-    .section-header {
-        background: linear-gradient(90deg, #667eea, #764ba2);
-        -webkit-background-clip: text;
-        -webkit-text-fill-color: transparent;
-        font-size: 1.3rem;
-        font-weight: 600;
-        margin: 1.5rem 0 1rem 0;
+    /* Intro text */
+    .intro-text {
+        text-align: center;
+        color: rgba(255, 255, 255, 0.85) !important;
+        font-size: 1.15rem;
+        margin-bottom: 2rem;
+        font-style: italic;
     }
     
     /* Input field styling */
     .stTextInput > div > div > input,
     .stTextArea > div > div > textarea {
-        border: 2px solid #e2e8f0;
-        border-radius: 10px;
-        padding: 0.75rem;
-        font-size: 0.95rem;
-        transition: border-color 0.3s ease;
+        background: rgba(255, 255, 255, 0.95) !important;
+        border: 2px solid rgba(255, 215, 0, 0.3) !important;
+        border-radius: 12px !important;
+        padding: 0.75rem !important;
+        font-size: 0.95rem !important;
+        color: #2d2d2d !important;
+        transition: all 0.3s ease !important;
     }
     
     .stTextInput > div > div > input:focus,
     .stTextArea > div > div > textarea:focus {
-        border-color: #667eea;
-        box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        border-color: #ffd700 !important;
+        box-shadow: 0 0 0 3px rgba(255, 215, 0, 0.2) !important;
     }
     
     /* Select box styling */
     .stSelectbox > div > div {
-        border-radius: 10px;
+        background: rgba(255, 255, 255, 0.95) !important;
+        border-radius: 12px !important;
+        border: 2px solid rgba(255, 215, 0, 0.3) !important;
+    }
+    
+    .stSelectbox > div > div > div {
+        color: #2d2d2d !important;
+    }
+    
+    /* Slider styling */
+    .stSlider > div > div > div > div {
+        background: #ffd700 !important;
+    }
+    
+    .stSlider > div > div > div > div > div {
+        background: #ffd700 !important;
     }
     
     /* Button styling */
     .stFormSubmitButton > button {
-        background: linear-gradient(90deg, #667eea, #764ba2);
-        color: white;
-        border: none;
-        border-radius: 12px;
-        padding: 0.875rem 2rem;
-        font-size: 1.1rem;
-        font-weight: 600;
-        letter-spacing: 0.5px;
-        transition: transform 0.2s ease, box-shadow 0.2s ease;
-        margin-top: 1rem;
+        background: linear-gradient(90deg, #ffd700, #ffb347) !important;
+        color: #4a1c2a !important;
+        border: none !important;
+        border-radius: 14px !important;
+        padding: 1rem 2rem !important;
+        font-size: 1.15rem !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.5px !important;
+        transition: all 0.3s ease !important;
+        margin-top: 1.5rem !important;
+        box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4) !important;
     }
     
     .stFormSubmitButton > button:hover {
-        transform: translateY(-2px);
-        box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+        transform: translateY(-3px) !important;
+        box-shadow: 0 8px 30px rgba(255, 215, 0, 0.5) !important;
     }
     
     /* Divider styling */
     hr {
-        border: none;
-        height: 1px;
-        background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
-        margin: 1.5rem 0;
-    }
-    
-    /* Results container */
-    .results-container {
-        background: #f8fafc;
-        border-radius: 15px;
-        padding: 1.5rem;
-        margin-top: 1rem;
-        border: 1px solid #e2e8f0;
+        border: none !important;
+        height: 1px !important;
+        background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.4), transparent) !important;
+        margin: 2rem 0 !important;
     }
     
     /* Info box styling */
     .stAlert {
-        border-radius: 12px;
+        background: rgba(255, 215, 0, 0.15) !important;
+        border: 1px solid rgba(255, 215, 0, 0.3) !important;
+        border-radius: 12px !important;
+        color: #ffffff !important;
+    }
+    
+    .stAlert > div {
+        color: #ffffff !important;
+    }
+    
+    /* Error message styling */
+    .stException, .stError {
+        background: rgba(255, 100, 100, 0.2) !important;
+        border-radius: 12px !important;
     }
     
     /* Caption/footer styling */
-    .stCaption {
-        text-align: center;
-        color: #718096;
+    .stCaption, caption {
+        text-align: center !important;
+        color: rgba(255, 255, 255, 0.6) !important;
     }
     
     /* Placeholder text */
     ::placeholder {
-        color: #a0aec0;
-        font-style: italic;
-    }
-    
-    /* Slider styling */
-    .stSlider > div > div > div {
-        background: linear-gradient(90deg, #667eea, #764ba2);
+        color: #888888 !important;
+        font-style: italic !important;
     }
     
     /* Hide Streamlit branding */
     #MainMenu {visibility: hidden;}
     footer {visibility: hidden;}
     
-    /* Intro text */
-    .intro-text {
-        text-align: center;
-        color: #718096;
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem;
+    /* Spinner */
+    .stSpinner > div {
+        border-top-color: #ffd700 !important;
     }
     
-    /* Form section backgrounds */
-    .form-section {
-        background: #f8fafc;
-        border-radius: 12px;
-        padding: 1rem;
-        margin: 0.5rem 0;
+    /* Results section styling */
+    .element-container {
+        color: #ffffff !important;
+    }
+    
+    /* Links */
+    a {
+        color: #ffd700 !important;
+    }
+    
+    /* Label text */
+    .stTextInput > label, .stTextArea > label, .stSelectbox > label {
+        color: #ffffff !important;
+        font-weight: 500 !important;
+    }
+    
+    /* Multiselect and select labels */
+    div[data-baseweb="select"] > div {
+        color: #2d2d2d !important;
     }
 </style>
 """, unsafe_allow_html=True)
@@ -484,4 +520,4 @@ Please analyze this person thoroughly and provide your best gift recommendations
 
 # Footer
 st.divider()
-st.caption("Built for Professor Hindman's AI Revolution course at GWU | Powered by Claude AI")
+st.caption("Built for Prof. Hindman's AI Revolution course at GWU | Powered by Claude AI")
