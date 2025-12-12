@@ -28,7 +28,7 @@ This app uses Claude (Anthropic's AI) to analyze your inputs and generate gift i
 
 ## Try It
 
-[Live Demo](https://your-streamlit-link-here.streamlit.app)
+[Live Demo](https://perfect-gift-finder.streamlit.app/)
 
 ## About
 
